@@ -8,6 +8,7 @@ export const Main = styled.main`
     font-size: 2rem;
     margin: 1.2rem 0;
     position: relative;
+    text-align: center;
   }
   & article {
     text-align: justify;

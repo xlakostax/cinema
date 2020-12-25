@@ -58,8 +58,8 @@ const SignUp = () => {
       console.log(user)
       setCurrentUser(user)
       setModal({
-          showModal: true,
-          info: `Successfully signed</span>.`
+        showModal: true,
+        info: `Successfully signed</span>.`
       });
       console.log("Successful");
     })
