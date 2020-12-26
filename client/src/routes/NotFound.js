@@ -26,11 +26,9 @@ const Main = styled.div`
   & a {
     position: relative;
     display: inline-block;
-    /* color: rgba(70, 130, 180); */
     &:after {
       content: '';
       position: absolute;
-      /*background-color: rgba(70, 130, 180, 0.5);*/
       background-color: #46B29A;
       top: 60%;
       left: -0.1rem;

@@ -1,17 +1,18 @@
-import { useEffect, useState } from "react";
-
-/* Import configs and providers */
-import firebaseConfig from "../FirebaseConfig";
+import React, {useState} from "react";
 
 /* Import libraries */
-import {Redirect} from 'react-router-dom';
 import dompurify from "dompurify";
-import { loadProgressBar } from "axios-progress-bar";
 import Modal from "react-modal";
+import {Redirect} from 'react-router-dom';
+
+/* Import providers and configs*/
+import {firebaseConfig} from "../FirebaseConfig";
 
 /* Import styles */
-import "axios-progress-bar/dist/nprogress.css";
-import {Wrapper, Main} from "../styles/styled";
+import {
+  Wrapper,
+  Main
+} from "../styles/styled";
 
 const SignUp = () => {
   const [credentials, setCredentials] = useState({
@@ -30,10 +31,6 @@ const SignUp = () => {
 
   const [currentUser, setCurrentUser] = useState(null)
 
-  useEffect(() => {
-    loadProgressBar();
-  });
-
   const onChangeHandler = (event) => {
     event.preventDefault();
     let name = event.target.name;
@@ -47,7 +44,7 @@ const SignUp = () => {
   };
 
   const onSubmitHandler = (event) => {
-    event.preventDefault(); /* Prevent form submit from reloading the page */
+    event.preventDefault();
     setButton({
       disabled: true
     });
@@ -58,8 +55,8 @@ const SignUp = () => {
       console.log(user)
       setCurrentUser(user)
       setModal({
-          showModal: true,
-          info: `Successfully signed</span>.`
+        showModal: true,
+        info: `Successfully signed</span>.`
       });
       console.log("Successful");
     })
@@ -109,9 +106,9 @@ const SignUp = () => {
           <i
             className="fas fa-times"
             onClick={handleCloseModal}
-            style={{ cursor: "pointer", marginRight: "1rem" }}
+            style={{cursor: "pointer", marginRight: "1rem"}}
           />
-          <p dangerouslySetInnerHTML={{ __html: sanitizer(modal.info) }} />
+          <p dangerouslySetInnerHTML={{__html: sanitizer(modal.info)}} />
         </Modal>
         <h1>Sign up:</h1>
         <br />
@@ -143,8 +140,8 @@ const SignUp = () => {
             </label>
           </p>
           <div>
-            <button type="submit" name="send" disabled={button.disabled}>
-              Send
+            <button type="submit" name="signup" disabled={button.disabled}>
+              Sign Up
             </button>
           </div>
         </form>
