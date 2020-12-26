@@ -84,25 +84,7 @@ a {
 body {
   font-family: "Merriweather";
   position: relative;
-  /* color: rgba(47, 47, 47, 1); */
-  /* background: rgb(246, 246, 246) center center no-repeat; */
-  /* background: -webkit-linear-gradient(160deg, rgba(246, 246, 246, 1) 15%, rgba(255, 255, 255, 1) 15%) center center no-repeat; */
-  /* background: -o-linear-gradient(190deg, rgba(246, 246, 246, 1) 15%, rgba(255, 255, 255, 1) 15%) center center no-repeat; */
-  /* background: linear-gradient(290deg, rgba(246, 246, 246, 1) 15%, rgba(255, 255, 255, 1) 15%) center center no-repeat; */
-  /* background-size: cover; */
-  /* -moz-background-size: cover; */
-  /* -webkit-background-size: cover; */
-  /* -o-background-size: cover; */
-  /* background-attachment: fixed; */
 }
-
-/* #root {
-  display: flex;
-  height: 100vh;
-  min-height: 100vh;
-  flex-direction: column;
-  align-items: center;
-} */
 
 #root {
   display: grid;
@@ -112,7 +94,7 @@ body {
     "asideLeft main asideRight"
     "footer footer footer";
   grid-template-columns: 25% 1fr 25%;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: 20% 1fr 15%;
   min-height: 100vh;
 }
 
@@ -131,7 +113,7 @@ h2, h1 {
   bottom: 0;
   right: 0;
   z-index: 9999;
-  background-color: rgba( 255, 255, 255, 0.5 );
+  background-color: #FFFFFF;
 }
 
 .Modal {
@@ -143,8 +125,8 @@ h2, h1 {
   justify-content: center;
   align-items: center;
   bottom: 20%;
-  background-color: rgba( 255, 255, 255, 1 );
-  border: 1px solid rgba( 220, 220, 220, 1 );
+  background-color: #FFFFFF;
+  border: 1px solid #DCDCDC;
   border-radius: 5px;
 }
 
@@ -154,17 +136,6 @@ h2, h1 {
 
 .Modal:focus {
   outline: none;
-}
-
-#nprogress .bar {
-  background: rgba(70,130,180) !important;
-}
-#nprogress .peg {
-  box-shadow: 0 0 10px rgba(70,130,180), 0 0 5px rgba(70,130,180) !important;
-}
-#nprogress .spinner-icon {
-  border-left-color: rgba(70,130,180) !important;
-  border-top-color: rgba(70,130,180) !important;
 }
 
 @media (min-width: 375px) and (max-width: 767px) {
