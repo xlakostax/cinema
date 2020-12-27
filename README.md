@@ -119,8 +119,9 @@ import "firebase/auth";
 
 export {firebaseConfig, database};
 ```
-8. In the project directory, you can run:
-  ### `npm start`
-  This runs the app in the development mode.
+8. In the project directory, you can run: 
+```
+npm start
+```
 9. ...
 10. Profit!
