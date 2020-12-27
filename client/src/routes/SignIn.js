@@ -22,6 +22,10 @@ const SignIn = () => {
     password: "",
   })
 
+  const [button, setButton] = useState({
+    disabled: false,
+  })
+
   const onChangeHandler = (event) => {
     event.preventDefault();
     let name = event.target.name;
@@ -35,12 +39,21 @@ const SignIn = () => {
   };
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    const {email, password} = event.target.elements;
-    try {
-      firebaseConfig.auth().signInWithEmailAndPassword(email.value, password.value);
-    } catch (error) {
-      alert(error);
-    }
+    let password = credentials.password;
+    let email = credentials.email;    
+    firebaseConfig.auth().signInWithEmailAndPassword(email, password)
+    .then(() => {
+      setButton({
+        disabled: true
+      });
+    })
+    .catch((error) => {
+      alert(error.message)
+      setButton({
+        disabled: false
+      });
+    });
+    
   };
   const {currentUser} = useContext(AuthContext);
   if (currentUser) {
