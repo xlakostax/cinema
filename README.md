@@ -15,81 +15,112 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
   3.2 Firebase Database (for data storing)
   3.3 Firebase Hosting (for the app hosting)
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.
-
-To run locally one needs to:
-1. Create a project in Firebase console. https://firebase.google.com/docs/web/setup
-2. Get a config snippet like
-
-  ```
-    const firebaseConfig = {
-      apiKey: "AIzaSyCGz.......JULeOSwrjmG4kE",
-      authDomain: "valamis-cinema.firebaseapp.com",
-      databaseURL: "https://<database-name>.firebaseio.com", //add this row after database create
-      projectId: "valamis-cinema",
-      storageBucket: "valamis-cinema.appspot.com",
-      messagingSenderId: "9609.......2380",
-      appId: "1:.......a7ea87b653bd4e9",
-      measurementId: "G-Z.......B8E"
-    };
-  ```
-3. Add authentication to a project and choose 
-4. Add database
+To run locally one needs to (for more information, please, use https://firebase.google.com/docs/web/setup):
+1. Create a Firebase account and add a project. In the example:
+  Project name: test
+  Project ID: test-ae5d0 (auto generated)
+2. Add Firebase to the app using the web option (</>).
+3. Specify an authentication method. Authentication -> Get started. This time use the email and password method.
+4. Create a database with Realtime Database in test mode. Realtime Databas -> Get started
 5. Create JSON file with data like:
 
   ```
   {
-    seats:[ 
+    "seats": [ 
       {
         "bookedBy" : "",
         "id" : "1",
         "isBooked" : false
-      }, {
+      }, 
+      {
         "bookedBy" : "",
         "id" : "2",
         "isBooked" : false
-      },{
-        ...
-      }, {
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "3",
+        "isBooked" : false
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "4",
+        "isBooked" : false
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "5",
+        "isBooked" : false
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "6",
+        "isBooked" : false
+      },
+      {
+        "bookedBy" : "",
+        "id" : "7",
+        "isBooked" : false
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "8",
+        "isBooked" : false
+      }, 
+      {
+        "bookedBy" : "",
+        "id" : "9",
+        "isBooked" : false
+      }, 
+      {
         "bookedBy" : "",
         "id" : "10",
         "isBooked" : false
-      }
-    ]
+      } ]
   }
   ```
-6. Import JSON to firebase database
-7. Create a FirebaseConfig.js ins src folder and fill with the code below:
+6. Import JSON to firebase database. Database is ready.
+7. Create a new file in the following location – src/FirebaseConfig.js
+8. Get a config snippet: Project Overview -> Settings -> General -> Firebase SDK snippet -> Config
+
+  ```
+    const firebaseConfig = {
+      apiKey: "AIzaSyDpUXczaZefA9vhzbpz6OOI1Gl7PsmpeLY",
+      authDomain: "test-ae5d0.firebaseapp.com",
+      databaseURL: "https://test-ae5d0-default-rtdb.firebaseio.com",
+      projectId: "test-ae5d0",
+      storageBucket: "test-ae5d0.appspot.com",
+      messagingSenderId: "1037763320253",
+      appId: "1:1037763320253:web:f06d3d7d1eeadb093adad4",
+      measurementId: "G-TV29WKRGK9"
+    };
+  ```
+
+7. In FirebnseConfig.js add the code below with the database path:
 ```
 import firebase from "firebase/app";
 import "firebase/database";
 import "firebase/auth";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-      apiKey: "AIzaSyCGz.......JULeOSwrjmG4kE",
-      authDomain: "valamis-cinema.firebaseapp.com",
-      databaseURL: "https://<database-name>.firebaseio.com", //add this row after database create
-      projectId: "valamis-cinema",
-      storageBucket: "valamis-cinema.appspot.com",
-      messagingSenderId: "9609.......2380",
-      appId: "1:.......a7ea87b653bd4e9",
-      measurementId: "G-Z.......B8E"
+  const config = {
+      apiKey: "AIzaSyDpUXczaZefA9vhzbpz6OOI1Gl7PsmpeLY",
+      authDomain: "test-ae5d0.firebaseapp.com",
+      databaseURL: "https://test-ae5d0-default-rtdb.firebaseio.com",
+      projectId: "test-ae5d0",
+      storageBucket: "test-ae5d0.appspot.com",
+      messagingSenderId: "1037763320253",
+      appId: "1:1037763320253:web:f06d3d7d1eeadb093adad4",
+      measurementId: "G-TV29WKRGK9"
     };
-
+  
   let firebaseConfig = firebase.initializeApp(config);
   let database = firebase.database();
 
 export {firebaseConfig, database};
 ```
-
-
-
-
-
+8. In the project directory, you can run:
+  ### `npm start`
+  This runs the app in the development mode.
+9. ...
+10. Profit!
